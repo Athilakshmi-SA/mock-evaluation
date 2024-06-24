@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Portfolio - Online Portfolio Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create Portfolio</h1>
+    </header>
+    <main>
+        <section id="create-portfolio">
+            <h2>Create Portfolio</h2>
+            <form id="portfolio-form">
+                <div class="form-section">
+                    <h3>Projects</h3>
+                    <div id="projects-container">
+                        <!-- Project entries will be dynamically added here -->
+                    </div>
+                    <button type="button" onclick="addProject()">Add Project</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Experience</h3>
+                    <div id="experiences-container">
+                        <!-- Experience entries will be dynamically added here -->
+                    </div>
+                    <button type="button" onclick="addExperience()">Add Experience</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Education</h3>
+                    <div class="education-entry">
+                        <label for="education-10th-school">10th School Name:</label>
+                        <input type="text" id="education-10th-school" name="education-10th-school" required>
+                        
+                        <label for="education-10th-location">Location:</label>
+                        <input type="text" id="education-10th-location" name="education-10th-location" required>
+                        
+                        <label for="education-10th-marks">Marks Scored:</label>
+                        <input type="text" id="education-10th-marks" name="education-10th-marks" required>
+                        
+                        <label for="education-12th-school">12th School Name:</label>
+                        <input type="text" id="education-12th-school" name="education-12th-school" required>
+                        
+                        <label for="education-12th-location">Location:</label>
+                        <input type="text" id="education-12th-location" name="education-12th-location" required>
+                        
+                        <label for="education-12th-marks">Marks Scored:</label>
+                        <input type="text" id="education-12th-marks" name="education-12th-marks" required>
+                        
+                        <label for="college-university">University Name:</label>
+                        <input type="text" id="college-university" name="college-university" required>
+                        
+                        <label for="college-location">Location:</label>
+                        <input type="text" id="college-location" name="college-location" required>
+                        
+                        <label for="college-degree">Degree:</label>
+                        <input type="text" id="college-degree" name="college-degree" required>
+                        
+                        <label for="college-gpa">GPA:</label>
+                        <input type="text" id="college-gpa" name="college-gpa" required>
+                    </div>
+                </div>
+                
+                <button type="submit">Save Portfolio</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Portfolio Builder</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        // Function to add project dynamically
+        function addProject() {
+            const projectsContainer = document.getElementById('projects-container');
+            const projectEntry = document.createElement('div');
+            projectEntry.classList.add('project-entry');
+            projectEntry.innerHTML = `
+                <label for="project-title">Project Title:</label>
+                <input type="text" name="project-title" required>
+                
+                <label for="project-description">Description:</label>
+                <input type="text" name="project-description" required>
+                
+                <button type="button" onclick="removeEntry(this)">Remove Project</button>
+            `;
+            projectsContainer.appendChild(projectEntry);
+        }
+
+        // Function to add experience dynamically
+        function addExperience() {
+            const experiencesContainer = document.getElementById('experiences-container');
+            const experienceEntry = document.createElement('div');
+            experienceEntry.classList.add('experience-entry');
+            experienceEntry.innerHTML = `
+                <label for="experience-company">Company:</label>
+                <input type="text" name="experience-company" required>
+                
+                <label for="experience-role">Role:</label>
+                <input type="text" name="experience-role" required>
+                
+                <label for="experience-duration">Duration:</label>
+                <input type="text" name="experience-duration" required>
+                
+                <button type="button" onclick="removeEntry(this)">Remove Experience</button>
+            `;
+            experiencesContainer.appendChild(experienceEntry);
+        }
+
+        // Function to remove dynamically added entry
+        function removeEntry(button) {
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

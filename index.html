@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Online Portfolio Builder</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Online Portfolio Builder</h1>
+    </header>
+    <main>
+        <section id="home-options">
+            <h2>Choose an Option</h2>
+            <div class="options">
+                <button onclick="navigate('create-portfolio.html')">Create Portfolio</button>
+                <button onclick="navigate('portfolios.html')">View All Portfolios</button>
+                <button onclick="navigate('view-portfolio.html')">View My Portfolio</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Portfolio Builder</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+    <script>
+        function navigate(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+
